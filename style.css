@@ -1,0 +1,330 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: #fff;
+    color: #333;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #FFD700; /* Yellow color for service name */
+}
+
+header nav {
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px; /* Adjust spacing as needed */
+}
+
+header nav ul li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1rem; /* Set desktop font size */
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    margin-top: 70px; /* Adjust for fixed header height */
+    background-image: url('image/kiiro.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    padding: 20px;
+    max-width: 1000px;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 60px 0;
+    background: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.self-intro-image {
+    float: right;
+    width: 40%; /* Adjust as needed */
+    max-width: 350px;
+    height: auto;
+    margin: 0 0 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#about .container {
+    overflow: auto; /* Contain floats */
+}
+
+.item-detail {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.item-detail img {
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.item-detail p {
+    flex: 1;
+}
+
+/* Clear float for subsequent h3 */
+#healing-goods {
+    clear: both;
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #FFD700;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #E0C000;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row; /* Keep header items in a row */
+        justify-content: space-between; /* Space out title and hamburger */
+    }
+
+    header nav {
+        display: none; /* Hide desktop nav */
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Off-screen by default */
+        background-color: #fff; /* Mobile menu background */
+        padding-top: 70px; /* Space for header */
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    header nav.active {
+        left: 0; /* Slide in */
+        display: flex; /* Show mobile nav */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 20px 0;
+    }
+
+    header nav ul li a {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger */
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #hero {
+        margin-top: 0; /* Hero should start from top */
+    }
+
+    .self-intro-image {
+        float: none;
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    .hero-overlay p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero-overlay p {
+        font-size: 1.2rem;
+    }
+
+    .content-section {
+        padding: 40px 0;
+    }
+
+    .content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
